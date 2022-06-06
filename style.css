@@ -216,6 +216,29 @@ h1 {
   order:0;
 }
 
+.additional-text{
+  margin-top: 0;
+}
+.footer-icon
+{
+  padding: 0 .1em;
+  transition: background-color 250ms;
+  margin-right: .5em;
+  border-radius: 15px;
+}
+
+.footer-icon:hover,
+.footer-icon:focus
+{
+  background-color: #bdae82;
+}
+
+.footer-icons{
+  display: flex;
+  justify-content: center;
+
+}
+
 @media (min-width: 675px) {
   .nav-items {
     flex-direction: row;
