@@ -107,6 +107,9 @@ strong {
 }
 
 /* Navigation */
+header{
+  padding-top: 0.5em;
+}
 .logo {
   height: 30%;
 }
