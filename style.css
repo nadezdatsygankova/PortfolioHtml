@@ -1,3 +1,13 @@
+:root {
+  --main-bg-color: #bdae82;
+  /* --main-bg-color: #0EA5E9; */
+}
+
+@keyframes example {
+  from {background-color: #010208;}
+  to {background-color: #bdae82;}
+}
+
 * {
   box-sizing: border-box;
 }
@@ -55,7 +65,7 @@ h4 {
 }
 h5 {
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 150%;
   margin: 1.2em 0;
 }
@@ -84,7 +94,7 @@ strong {
 
 .bold {
   font-weight: 600;
-  color: #bdae82;
+  color: var(--main-bg-color);
   letter-spacing: -0.02em;
 }
 
@@ -93,7 +103,7 @@ strong {
   text-transform: uppercase;
   font-weight: 600;
   list-style: none;
-  color: #bdae82;
+  color: var(--main-bg-color);
 }
 
 /* Navigation */
@@ -134,11 +144,37 @@ strong {
 /* Home */
 
 h1 {
-  margin: 2em auto;
+  margin: 0 auto;
+  /* margin: 2em auto; */
 }
 
 .wrapper-main{
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.home-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  justify-content: space-around;
+}
+
+
+
+.arrow{
+  padding: .5em;
+  border-radius: 15px;
+}
+
+.arrow:hover,
+.arrow:focus{
+  animation-name: example;
+  animation-duration: 4s;
+  background-color: var(--main-bg-color);
 }
 
 /* Works */
@@ -157,13 +193,13 @@ h1 {
 .img-work {
   max-width: 100%;
   border-radius: 15px;
-  /* border:2px solid #bdae82; */
+  /* border:2px solid var(--main-bg-color); */
   overflow: hidden;
 }
 
 .btn {
   border-radius: 15px;
-  border: 2px solid #bdae82;
+  border: 2px solid var(--main-bg-color);
   text-transform: uppercase;
   font-size: 1rem;
   padding: 0.5em 0.8em;
@@ -174,7 +210,7 @@ h1 {
 .btn:hover,
 .btn:focus {
   transform: scale(1.2);
-  background-color: #bdae82;
+  background-color: var(--main-bg-color);
   font-weight: 600;
   color: #fff;
 }
@@ -230,7 +266,7 @@ h1 {
 .footer-icon:hover,
 .footer-icon:focus
 {
-  background-color: #bdae82;
+  background-color: var(--main-bg-color);
 }
 
 .footer-icons{
@@ -263,10 +299,13 @@ h1 {
   }
 
   h1 {
-    margin: 4.5em auto;
+    /* margin: 2.5em auto; */
   }
   h3 {
     font-size: 2.77rem;
+  }
+  .intro-section{
+    padding-bottom: 6em;
   }
   .container-works {
     display: flex;
@@ -279,7 +318,7 @@ h1 {
     font-size: 1.11rem;
   }
   h5 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .work {
