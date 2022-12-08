@@ -309,6 +309,17 @@ h1 {
   }
   .intro-section{
     padding-bottom: 6em;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 45%;
+  }
+
+  .photo-intro{
+    width: 400px;
+  }
+
+  .intro-container{
+    flex: 1 1 45%;
   }
   .container-works {
     display: flex;
