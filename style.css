@@ -308,14 +308,15 @@ h1 {
     font-size: 2.77rem;
   }
   .intro-section{
-    padding-bottom: 6em;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 45%;
   }
 
   .photo-intro{
-    width: 400px;
+    max-width: 400px;
+    padding: 10px;
   }
 
   .intro-container{
