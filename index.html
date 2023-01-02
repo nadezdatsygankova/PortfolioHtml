@@ -14,74 +14,81 @@
 </head>
 
 <body>
-  <div class="wrapper-main">
-    <header id="home">
-      <div class="container container-flex">
-        <div class="logo-container">
-          <img class="logo" src="./img/logo/3gold.svg" alt="logo" />
+  <main>
+    <div class="wrapper-main">
+      <header id="home">
+        <div class="container container-flex">
+          <div class="logo-container">
+            <img class="logo" src="./img/logo/3gold.svg" alt="logo" />
+          </div>
+          <nav class="navigation">
+            <ul class="nav-items">
+              <li class="nav-item"><a href="#home">Home</a></li>
+              <li class="nav-item"><a href="#work">Work</a></li>
+              <li class="nav-item"> <a href="#aboutMe">About me</a></li>
+              <li class="nav-item"> <a href="#" id="contact-id">Contact</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav class="navigation">
-          <ul class="nav-items">
-            <li class="nav-item"><a href="#home">Home</a></li>
-            <li class="nav-item"><a href="#work">Work</a></li>
-            <li class="nav-item"> <a href="#aboutMe">About me</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <section class="container home-section">
-      <div class = "intro-section">
-        <div class="photo-intro">
-          <img src="./img/linkedIN4_1.jpeg" alt="photo" >
+      </header>
+      <section class="container home-section">
+        <div class="intro-section">
+          <div class="photo-intro">
+            <img src="./img/linkedIN4_1.jpeg" alt="photo">
+          </div>
+          <div class="intro-container">
+            <h1 class="title">I'm Nadia Tsygankova!<br> I'm <span class="bold">a Web Developer</span></h1>
+            <h5>My master's degree is in <span class="bold">Computer Science and Physics.</span><br>
+              I graduated from <span class="bold">Seneca College</span> with a diploma in computer programmer</h5>
+            <h5>I <span class="bold">love</span> working with technology and solving interesting technical challenges.
+            </h5>
+          </div>
         </div>
-        <div class="intro-container">
-          <h1 class="title">I'm Nadia Tsygankova!<br> I'm <span class="bold">a Web Developer</span></h1>
-          <h5>My master's degree is in <span class="bold">Computer Science and Physics.</span><br>
-            I graduated from <span class="bold">Seneca College</span> with a diploma in computer programmer</h5>
-          <h5>I <span class="bold">love</span> working with technology and solving interesting technical challenges.</h5>
+        <div>
+          <a href="#contact">Contact me</a>
         </div>
-      </div>
-      <a class = "arrow"
-       href="#work"><img src="./img/icons/Vector.svg" alt=""></a>
-    </section>
-  </div>
-  <section id="work" class="work-section">
-    <h3>Selected <span class="bold">Works</span></h3>
-    <div class="container">
+        <a class="arrow" href="#work"><img src="./img/icons/Vector.svg" alt=""></a>
+      </section>
+    </div>
+    <section id="work" class="work-section">
+      <h3>Selected <span class="bold">Works</span></h3>
+      <div class="container">
 
-      <article class="container-works">
-        <div class="work">
-          <img class="img-work" src="./img/works/gallery.jpg" alt="" />
-        </div>
-        <div class="work">
-          <h4 class="title-work">Gallery application</h4>
-          <h5>Developed fully functional gallery application with an interactive order and purchase interface, an
-            interactive login
-            interface for your virtual client, and user registration functionality. <br>
-            <span class="bold">Built with
-              Node.js, Express.js, Handlebars,
-              MongoDB database, JSON, Sessions + Cookies and deployed on Heroku</span></h5>
-          <p>Website Design</p>
-          <a href="https://github.com/nadezdatsygankova/Gallery" target="_blank" class="btn">View Work</a>
-        </div>
-      </article>
+        <article class="container-works">
+          <div class="work">
+            <img class="img-work" src="./img/works/gallery.jpg" alt="" />
+          </div>
+          <div class="work">
+            <h4 class="title-work">Gallery application</h4>
+            <h5>Developed fully functional gallery application with an interactive order and purchase interface, an
+              interactive login
+              interface for your virtual client, and user registration functionality. <br>
+              <span class="bold">Built with
+                Node.js, Express.js, Handlebars,
+                MongoDB database, JSON, Sessions + Cookies and deployed on Heroku</span>
+            </h5>
+            <p>Website Design</p>
+            <a href="https://github.com/nadezdatsygankova/Gallery" target="_blank" class="btn">View Work</a>
+          </div>
+        </article>
 
-      <article class="container-works">
-        <div class="work">
-          <img class="img-work" src="./img/works/weather-node.jpg" alt="" />
-        </div>
-        <div class="work">
-          <h4 class="title-work">Weather application</h4>
-          <h5>Developed fully functional weather application
-            <br>
-           <span class="bold">Built with
-              Node.js, Express.js, Handlebars, API,
-              JSON and deployed on Heroku</span></h5>
-          <p>Website Design</p>
-          <a href="https://github.com/nadezdatsygankova/web-server" target="_blank" class="btn">View Work</a>
-        </div>
-      </article>
-      <!-- <article class="container-works">
+        <article class="container-works">
+          <div class="work">
+            <img class="img-work" src="./img/works/weather-node.jpg" alt="" />
+          </div>
+          <div class="work">
+            <h4 class="title-work">Weather application</h4>
+            <h5>Developed fully functional weather application
+              <br>
+              <span class="bold">Built with
+                Node.js, Express.js, Handlebars, API,
+                JSON and deployed on Heroku</span>
+            </h5>
+            <p>Website Design</p>
+            <a href="https://github.com/nadezdatsygankova/web-server" target="_blank" class="btn">View Work</a>
+          </div>
+        </article>
+        <article class="container-works">
         <div class="work">
           <img class="img-work" src="./img/works/wedding.jpg" alt="" />
         </div>
@@ -92,97 +99,130 @@
           <p>Website Design</p>
           <a href="https://valery-decore.netlify.app/" target="_blank" class="btn">View Work</a>
         </div>
-      </article> -->
-
-      <article class="container-works">
-        <div class="work">
-          <img class="img-work" src="./img/works/shelter.jpg" alt="" />
-        </div>
-        <div class="work">
-          <h4 class="title-work">Cozy House</h4>
-          <h5>Developed a model for the application with responsive design. <span class="bold">Built in HTML, CSS, and
-              JS</span></h5>
-          <p>Website Design</p>
-          <a href="https://rolling-scopes-school.github.io/nadezdatsygankova-JSFE2022Q1/shelter/index.html"
-            target="_blank" class="btn">View Work</a>
-        </div>
       </article>
 
-      <article class="container-works">
-        <div class="work">
-          <img class="img-work" src="./img/works/3.jpg" alt="" />
-        </div>
-        <div class="work">
-          <h4 class="title-work">Wild life</h4>
-          <h5>Developed a model for the application. <span class="bold">Built in HTML, CSS, and JS</h5>
-          <p>Website Design</p>
-          <a href="https://tswildlife.netlify.app/#signIn" target="_blank" class="btn">View Work</a>
-        </div>
-      </article>
-      <article class="container-works">
-        <div class="work">
-          <img class="img-work" src="./img/works/4.jpg" alt="" />
-        </div>
-        <div class="work">
-          <h4 class="title-work">Photo-filer</h4>
-          <h5>Developed a model for the application of photo-filters. <span class="bold">Built in HTML, CSS, and
-              JS</span></h5>
-          <p>Website Design</p>
-          <a href="https://nadezdatsygankova.github.io/photo-filer/" target="_blank" class="btn">View Work</a>
-        </div>
-      </article>
-      <article class="container-works">
-        <div class="work">
-          <img class="img-work" src="./img/works/2.jpg" alt="" />
-        </div>
-        <div class="work">
-          <h4 class="title-work">Virtual piano</h4>
-          <h5>Developed a platform to play the piano on a computer keyboard instantly. <span class="bold">Built in HTML,
-              CSS, and JS</span></h5>
-          <p>Website Design</p>
-          <a href="https://nadezdatsygankova.github.io/virtual-piano/" target="_blank" class="btn">View Work</a>
-        </div>
-      </article>
+        <article class="container-works">
+          <div class="work">
+            <img class="img-work" src="./img/works/shelter.jpg" alt="" />
+          </div>
+          <div class="work">
+            <h4 class="title-work">Cozy House</h4>
+            <h5>Developed a model for the application with responsive design. <span class="bold">Built in HTML, CSS, and
+                JS</span></h5>
+            <p>Website Design</p>
+            <a href="https://rolling-scopes-school.github.io/nadezdatsygankova-JSFE2022Q1/shelter/index.html"
+              target="_blank" class="btn">View Work</a>
+          </div>
+        </article>
 
+        <article class="container-works">
+          <div class="work">
+            <img class="img-work" src="./img/works/3.jpg" alt="" />
+          </div>
+          <div class="work">
+            <h4 class="title-work">Wild life</h4>
+            <h5>Developed a model for the application. <span class="bold">Built in HTML, CSS, and JS</h5>
+            <p>Website Design</p>
+            <a href="https://tswildlife.netlify.app/#signIn" target="_blank" class="btn">View Work</a>
+          </div>
+        </article>
+        <article class="container-works">
+          <div class="work">
+            <img class="img-work" src="./img/works/4.jpg" alt="" />
+          </div>
+          <div class="work">
+            <h4 class="title-work">Photo-filer</h4>
+            <h5>Developed a model for the application of photo-filters. <span class="bold">Built in HTML, CSS, and
+                JS</span></h5>
+            <p>Website Design</p>
+            <a href="https://nadezdatsygankova.github.io/photo-filer/" target="_blank" class="btn">View Work</a>
+          </div>
+        </article>
+        <article class="container-works">
+          <div class="work">
+            <img class="img-work" src="./img/works/2.jpg" alt="" />
+          </div>
+          <div class="work">
+            <h4 class="title-work">Virtual piano</h4>
+            <h5>Developed a platform to play the piano on a computer keyboard instantly. <span class="bold">Built in
+                HTML,
+                CSS, and JS</span></h5>
+            <p>Website Design</p>
+            <a href="https://nadezdatsygankova.github.io/virtual-piano/" target="_blank" class="btn">View Work</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+    <section id="aboutMe" class="about-section">
+      <h4 class="title-about">A bit <span class="bold">about me</span></h4>
+      <div class="container container-about">
+        <div class="section-item">
+          <h5>I am <span class="bold">a web developer</span> who is passionate about creating beautiful and joyful
+            digital
+            experiences.</h5>
+          <h5 class="additional-text">Besides design, I love <span class="bold">riding a bike, travelling and reading a
+              book.</span></h5>
+        </div>
+        <div class="section-item section-img">
+          <img class="img-about" src="./img/bicycle2.jpg">
+          <img class="img-about bottom" src="./img/travel1.jpeg">
+          <img class="img-about" src="./img/book.jpg">
+        </div>
+      </div>
+
+    </section>
+    <footer>
+      <h2 class="title">Get <span class="bold">in Touch</span></h2>
+      <p class="subtitle">So that we can talk more about...</p>
+      <div class="action_form">
+        <form id="contactForm" class="action_form_input">
+          <div class="alert">Your message sent</div>
+          <input name="name" type="text" required placeholder="Your Name" id="contact-name" class="field"
+            required>
+          <input name="email" type="email" required placeholder="Email" id="contact-email" class="field"
+            required>
+          <input name="phone" type="text" required placeholder="Phone: 4444444444" id="contact-phone"
+            class="field" required>
+          <textarea name="content" id="contact-message" cols="30" rows="7"
+            placeholder="How can we help you?"></textarea>
+          </textarea>
+          <button class="main-block__button main-block__button_color form__button" type="submit"
+            name="button">Send</button>
+        </form>
+      </div>
+      <div class="footer-icons">
+        <div class="footer-icon">
+          <a target="_blank" rel="noreferrer" href="mailto:tsygankovanadia@gmail.com"><img src="./img/icons/Mail.svg"
+              alt=""></a>
+        </div>
+        <div class="footer-icon">
+          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nadezdatsygankova/"><img
+              src="./img/icons/LinkedIn.svg" alt=""></a>
+        </div>
+        <div class="footer-icon">
+          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nadezdatsygankova/"><img
+              src="./img/icons/git-hub-logo.svg" alt=""></a>
+        </div>
+
+      </div>
+      <p>Made with ❣️ by <span class="bold">Nadia Tsygankova</span> </p>
+    </footer>
+  </main>
+  <div class="modal" id="modal">
+    <div class="close-modal-btn-container">
+      <button class="modal-close-btn" id="modal-close-btn">X</button>
     </div>
-  </section>
-  <section id="aboutMe" class="about-section">
-    <h4 class="title-about">A bit <span class="bold">about me</span></h4>
-    <div class="container container-about">
-      <div class="section-item">
-        <h5>I am <span class="bold">a web developer</span> who is passionate about creating beautiful and joyful digital
-          experiences.</h5>
-        <h5 class="additional-text">Besides design, I love <span class="bold">riding a bike, travelling and reading a
-            book.</span></h5>
-      </div>
-      <div class="section-item section-img">
-        <img class="img-about" src="./img/bicycle2.jpg">
-        <img class="img-about bottom" src="./img/travel1.jpeg">
-        <img class="img-about" src="./img/book.jpg">
-      </div>
+    <div class="modal-inner" id="modal-inner">
+        <h2>Get in touch </h2>
+        <a href="tel:+14373484280" class="modal-text">Phone: <br> (437) 348-4280
+        </a>
+        <a href="mailto:nadiatsygankova@gmail.com" class="modal-text"> Email:
+          nadiatsygankova@gmail.com
+        </a>
     </div>
-
-  </section>
-  <footer>
-    <h2 class="title">Get <span class="bold">in Touch</span></h2>
-    <p class="subtitle">So that we can talk more about...</p>
-    <div class="footer-icons">
-      <div class="footer-icon">
-        <a target="_blank" rel="noreferrer" href="mailto:tsygankovanadia@gmail.com"><img src="./img/icons/Mail.svg"
-            alt=""></a>
-      </div>
-      <div class="footer-icon">
-        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nadezdatsygankova/"><img
-            src="./img/icons/LinkedIn.svg" alt=""></a>
-      </div>
-      <div class="footer-icon">
-        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/nadezdatsygankova/"><img
-            src="./img/icons/github.svg" alt=""></a>
-      </div>
-
-    </div>
-    <p>Made with ❣️ by <span class="bold">Nadia Tsygankova</span> </p>
-  </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="index.js"></script>
 </body>
-
 </html>
