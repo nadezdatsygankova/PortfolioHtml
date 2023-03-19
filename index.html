@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&display=swap"
@@ -16,7 +20,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZX4R9B3ZV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-FZX4R9B3ZV');
@@ -68,7 +72,7 @@
           </div>
           <div class="work">
             <h4 class="title-work">Food List application</h4>
-            <h5>Developed fully functional  application. <br>
+            <h5>Developed fully functional application. <br>
               <span class="bold">Built with JS, HTML, CSS, Firebase</span>
             </h5>
             <p>Website Design</p>
@@ -111,17 +115,18 @@
           </div>
         </article>
         <article class="container-works">
-        <div class="work">
-          <img class="img-work" src="./img/works/wedding.jpg" alt="" />
-        </div>
-        <div class="work">
-          <h4 class="title-work">Wedding application</h4>
-          <h5> <br>
-            <span class="bold">Built with HTML5, CSS using a Figma design</span></h5>
-          <p>Website Design</p>
-          <a href="https://valery-decore.netlify.app/" target="_blank" class="btn">View Work</a>
-        </div>
-      </article>
+          <div class="work">
+            <img class="img-work" src="./img/works/wedding.jpg" alt="" />
+          </div>
+          <div class="work">
+            <h4 class="title-work">Wedding application</h4>
+            <h5> <br>
+              <span class="bold">Built with HTML5, CSS using a Figma design</span>
+            </h5>
+            <p>Website Design</p>
+            <a href="https://valery-decore.netlify.app/" target="_blank" class="btn">View Work</a>
+          </div>
+        </article>
 
         <article class="container-works">
           <div class="work">
@@ -200,12 +205,10 @@
       <div class="action_form">
         <form id="contactForm" class="action_form_input">
           <div class="alert">Your message sent</div>
-          <input name="name" type="text" required placeholder="Your Name" id="contact-name" class="field"
+          <input name="name" type="text" required placeholder="Your Name" id="contact-name" class="field" required>
+          <input name="email" type="email" required placeholder="Email" id="contact-email" class="field" required>
+          <input name="phone" type="text" required placeholder="Phone: 4444444444" id="contact-phone" class="field"
             required>
-          <input name="email" type="email" required placeholder="Email" id="contact-email" class="field"
-            required>
-          <input name="phone" type="text" required placeholder="Phone: 4444444444" id="contact-phone"
-            class="field" required>
           <textarea name="content" id="contact-message" cols="30" rows="7"
             placeholder="How can we help you?"></textarea>
           </textarea>
@@ -236,15 +239,16 @@
       <button class="modal-close-btn" id="modal-close-btn">X</button>
     </div>
     <div class="modal-inner" id="modal-inner">
-        <h2>Get in touch </h2>
-        <a href="tel:+14373484280" class="modal-text">Phone: <br> (437) 348-4280
-        </a>
-        <a href="mailto:nadiatsygankova@gmail.com" class="modal-text"> Email:
-          nadiatsygankova@gmail.com
-        </a>
+      <h2>Get in touch </h2>
+      <a href="tel:+14373484280" class="modal-text">Phone: <br> (437) 348-4280
+      </a>
+      <a href="mailto:nadiatsygankova@gmail.com" class="modal-text"> Email:
+        nadiatsygankova@gmail.com
+      </a>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
   <script src="index.js"></script>
 </body>
+
 </html>
