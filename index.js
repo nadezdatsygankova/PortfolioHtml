@@ -35,9 +35,9 @@ function submitForm(e) {
   let phone = getInputVal("contact-phone");
   //gets the message
   let message = getInputVal("contact-message");
-  console.log(name, email, phone, message)
+  // console.log(name, email, phone, message)
   if (validateForm(name, email, phone, message)) {
-    console.log('yes')
+    // console.log('yes')
     let templateParams = {
       to_name: 'Nadia Tsy',
       from_name: name,
