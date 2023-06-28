@@ -1,17 +1,16 @@
+
+import env from './env.js';
+window.env = env;
+
 const modal = document.querySelector('.modal');
 const modalCloseBtn = document.getElementById('modal-close-btn')
 const contactButton = document.getElementById('contact-id')
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDrxnMl55mDqh-ZTUJAx4sxeUPguIi3Hr8",
-  authDomain: "contacformnadiatsy.firebaseapp.com",
-  databaseURL: "https://contacformnadiatsy-default-rtdb.firebaseio.com",
-  projectId: "contacformnadiatsy",
-  storageBucket: "contacformnadiatsy.appspot.com",
-  messagingSenderId: "754460503086",
-  appId: "1:754460503086:web:4d8c2a5a6eb9614bf283bf"
-};
 
+// Access the configuration variables
+const EMIL_ID = env.EMIL_ID;
+const SERVICE_ID = env.SERVICE_ID;
+const TEMPLATE_ID = env.TEMPLATE_ID;
 
 contactButton.addEventListener('click', ()=>{
   modal.style.display = 'inline'
@@ -22,12 +21,6 @@ modalCloseBtn.addEventListener('click', function (){
   console.log('click')
   modal.style.display = "none"
 })
-
-//initialize firebase
-firebase.initializeApp(firebaseConfig);
-
-//reference your database
-const contactFormDB = firebase.database().ref("contact-form")
 
 document.getElementById("contactForm").addEventListener("submit", submitForm);
 
@@ -45,7 +38,23 @@ function submitForm(e) {
   console.log(name, email, phone, message)
   if (validateForm(name, email, phone, message)) {
     console.log('yes')
-    saveMessage(name, email, phone, message)
+    let templateParams = {
+      to_name: 'Nadia Tsy',
+      from_name: name,
+      from_email:email,
+      from_phone:phone,
+      message_html: message
+    };
+
+
+    emailjs.init(EMIL_ID);
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+        console.log('FAILED...', error);
+      });
 
     //enable alert
     document.querySelector('.alert').style.display = 'block';
@@ -63,16 +72,7 @@ function submitForm(e) {
   }
 }
 
-const saveMessage = (name, email, phone, message) => {
-  let newContactForm = contactFormDB.push();
 
-  newContactForm.set({
-    name: name,
-    email: email,
-    phone: phone,
-    message: message,
-  });
-}
 
 function getInputVal(id) {
   return document.getElementById(id).value
@@ -89,12 +89,15 @@ function validateForm(name, email, phone, message) {
   } else {
     if (email.match(validRegex) && phone.match(phoneno)) {
       console.log(name, email, phone, message)
-      return true
+      return true;
     } else {
       alert("Invalid email address or phone!");
       return false;
     }
   }
 }
+
+
+
 
 
