@@ -224,9 +224,9 @@ h1 {
   max-width: 100%;
   border-radius: 15px;
   border:2px solid var(--main-bg-color);
-  overflow: hidden;
-  width: 480px;
-  height: 480px;
+  /* overflow: hidden; */
+  /* width: 480px;
+  height: 480px; */
 }
 
 .btn {
