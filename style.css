@@ -589,9 +589,10 @@ textarea {
     z-index: 5;
     display: block;
     position: relative;
-    width: 30px;
-    height: 18px;
+    width: 40px;
+    height: 28px;
     cursor: pointer;
+    margin: 20px;
   }
 
   .menu__icon span,
