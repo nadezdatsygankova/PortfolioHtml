@@ -22,80 +22,80 @@ modalCloseBtn.addEventListener('click', function (){
   modal.style.display = "none"
 })
 
-document.getElementById("contactForm").addEventListener("submit", submitForm);
+// document.getElementById("contactForm").addEventListener("submit", submitForm);
 
 
-function submitForm(e) {
-  e.preventDefault();
-  //gets the name
-  let name = getInputVal("contact-name");
-  //gets the email
-  let email = getInputVal("contact-email");
-  //gets the phone
-  let phone = getInputVal("contact-phone");
-  //gets the message
-  let message = getInputVal("contact-message");
-  // console.log(name, email, phone, message)
-  if (validateForm(name, email, phone, message)) {
-    // console.log('yes')
-    let templateParams = {
-      to_name: 'Nadia Tsy',
-      from_name: name,
-      from_email:email,
-      from_phone:phone,
-      message_html: message
-    };
+// function submitForm(e) {
+//   e.preventDefault();
+//   //gets the name
+//   let name = getInputVal("contact-name");
+//   //gets the email
+//   let email = getInputVal("contact-email");
+//   //gets the phone
+//   let phone = getInputVal("contact-phone");
+//   //gets the message
+//   let message = getInputVal("contact-message");
+//   // console.log(name, email, phone, message)
+//   if (validateForm(name, email, phone, message)) {
+//     // console.log('yes')
+//     let templateParams = {
+//       to_name: 'Nadia Tsy',
+//       from_name: name,
+//       from_email:email,
+//       from_phone:phone,
+//       message_html: message
+//     };
 
 
-    emailjs.init(EMIL_ID);
+//     emailjs.init(EMIL_ID);
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
-      .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-      }, function(error) {
-        console.log('FAILED...', error);
-      });
+//     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+//       .then(function(response) {
+//         console.log('SUCCESS!', response.status, response.text);
+//       }, function(error) {
+//         console.log('FAILED...', error);
+//       });
 
-    //enable alert
-    document.querySelector('.alert').style.display = 'block';
-    //remote alert
-    setTimeout(() => {
-      document.querySelector('.alert').style.display = 'none';
-    }, 4000)
+//     //enable alert
+//     document.querySelector('.alert').style.display = 'block';
+//     //remote alert
+//     setTimeout(() => {
+//       document.querySelector('.alert').style.display = 'none';
+//     }, 4000)
 
-    //reset form
-    document.getElementById("contactForm").reset();
+//     //reset form
+//     document.getElementById("contactForm").reset();
 
-  }
-  else {
-    console.log("Invalid email address or phone!");
-  }
-}
+//   }
+//   else {
+//     console.log("Invalid email address or phone!");
+//   }
+// }
 
 
 
-function getInputVal(id) {
-  return document.getElementById(id).value
-}
+// function getInputVal(id) {
+//   return document.getElementById(id).value
+// }
 
-function validateForm(name, email, phone, message) {
-  const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const phoneno = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+// function validateForm(name, email, phone, message) {
+//   const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+//   const phoneno = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
 
-  //checks if all fields have been filled before sending message.
-  if (name.trim() == "" || email.trim() == "" || message.trim() == "" || phone.trim() == "") {
-    alert("all fields must be filled");
-    return false;
-  } else {
-    if (email.match(validRegex) && phone.match(phoneno)) {
-      console.log(name, email, phone, message)
-      return true;
-    } else {
-      alert("Invalid email address or phone!");
-      return false;
-    }
-  }
-}
+//   //checks if all fields have been filled before sending message.
+//   if (name.trim() == "" || email.trim() == "" || message.trim() == "" || phone.trim() == "") {
+//     alert("all fields must be filled");
+//     return false;
+//   } else {
+//     if (email.match(validRegex) && phone.match(phoneno)) {
+//       console.log(name, email, phone, message)
+//       return true;
+//     } else {
+//       alert("Invalid email address or phone!");
+//       return false;
+//     }
+//   }
+// }
 
 
 
