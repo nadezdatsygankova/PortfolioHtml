@@ -212,7 +212,7 @@ function showNotification(message, type = 'info') {
       notification.style.transform = 'translateX(100%)';
       setTimeout(() => notification.remove(), 300);
     }
-  }, 5000);
+  }, 10000);
 }
 
 // Add notification styles to CSS
