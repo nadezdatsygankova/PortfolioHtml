@@ -89,6 +89,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent default form submission
+
       // Get form data
       const formData = new FormData(this);
       const name = formData.get('name');
@@ -97,22 +99,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Simple validation
       if (!name || !email || !message) {
-        e.preventDefault();
         showNotification('Please fill in all fields', 'error');
         return;
       }
 
       if (!isValidEmail(email)) {
-        e.preventDefault();
         showNotification('Please enter a valid email address', 'error');
         return;
       }
 
-      // Show success message
-      showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+      // Show loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
 
-      // Let the form submit naturally to Netlify
-      // The form will reload the page, but that's okay for Netlify Forms
+      // Submit to Netlify using fetch
+      fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then(response => {
+          if (response.ok) {
+            // Success - hide form and show success message
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Show notification
+            showNotification('Message sent successfully!', 'success');
+
+            // Scroll to top of contact section
+            document.getElementById('contact').scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          } else {
+            throw new Error('Form submission failed');
+          }
+        })
+        .catch(error => {
+          console.error('Form submission error:', error);
+          showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+        })
+        .finally(() => {
+          // Reset button state
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
     });
   }
 });
