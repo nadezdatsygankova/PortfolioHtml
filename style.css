@@ -607,7 +607,7 @@ p {
   text-align: center;
   padding: 2rem;
   background: var(--bg-accent);
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--gradient-primary);
   border-radius: 16px;
   margin-top: 1rem;
 }
@@ -618,7 +618,7 @@ p {
 }
 
 .success-message h3 {
-  color: var(--accent-color);
+  color: var(--gradient-primary);
   margin-bottom: 0.5rem;
 }
 
