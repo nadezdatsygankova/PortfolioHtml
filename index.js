@@ -89,9 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-      // Don't prevent default - let Netlify handle the submission
-      // e.preventDefault();
-
       // Get form data
       const formData = new FormData(this);
       const name = formData.get('name');
@@ -111,9 +108,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Show success message after form submission
-      // The form will submit to Netlify automatically
+      // Show success message
       showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+
+      // Let the form submit naturally to Netlify
+      // The form will reload the page, but that's okay for Netlify Forms
     });
   }
 });
