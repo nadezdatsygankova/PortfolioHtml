@@ -383,8 +383,15 @@
             <div class="form-group">
               <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
           </form>
+
+          <!-- Success message (hidden by default) -->
+          <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-icon">✅</div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. I'll get back to you soon!</p>
+          </div>
         </div>
       </div>
     </div>

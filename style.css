@@ -602,6 +602,31 @@ p {
   left: -9999px;
 }
 
+/* Success message styling */
+.success-message {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-accent);
+  border: 2px solid var(--accent-color);
+  border-radius: 16px;
+  margin-top: 1rem;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.success-message h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.success-message p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
 /* Footer */
 .footer {
   background: var(--text-primary);
