@@ -377,4 +377,92 @@ const debouncedScrollHandler = debounce(function () {
 window.addEventListener('scroll', debouncedScrollHandler);
 
 
+// =================== MOBILE NAV: toggle + close on link ===================
+(function () {
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+  const links = menu?.querySelectorAll(".nav-link") || [];
 
+  // Toggle open/close
+  toggle?.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    toggle.classList.toggle("open");
+    document.body.classList.toggle("no-scroll", menu.classList.contains("open"));
+  });
+
+  // Close the menu when any nav link is clicked
+  links.forEach((a) =>
+    a.addEventListener("click", () => {
+      menu.classList.remove("open");
+      toggle?.classList.remove("open");
+      document.body.classList.remove("no-scroll");
+    })
+  );
+
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && menu?.classList.contains("open")) {
+      menu.classList.remove("open");
+      toggle?.classList.remove("open");
+      document.body.classList.remove("no-scroll");
+    }
+  });
+})();
+
+// =================== TRAINER MODAL: open/close + ESC + focus trap ===================
+(function () {
+  const modal = document.getElementById("trainerModal");
+  if (!modal) return;
+
+  const openBtns = document.querySelectorAll("[data-open-trainer]");
+  const closeEls = modal.querySelectorAll("[data-close]");
+  const backdrop = modal.querySelector(".trainer-backdrop");
+  const sheet = modal.querySelector(".trainer-sheet");
+  const focusableSel = 'a,button,input,textarea,select,details,[tabindex]:not([tabindex="-1"])';
+  let lastFocus = null;
+
+  function getFocusable() {
+    return [...modal.querySelectorAll(focusableSel)]
+      .filter(el => !el.disabled && el.offsetParent !== null);
+  }
+
+  function openModal() {
+    lastFocus = document.activeElement;
+    modal.classList.add("is-open");
+    document.body.classList.add("no-scroll");
+    // focus first thing inside modal (the sheet)
+    sheet && sheet.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    document.body.classList.remove("no-scroll");
+    lastFocus && lastFocus.focus();
+  }
+
+  // Open
+  openBtns.forEach(btn => btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+  }));
+
+  // Close buttons (X) and backdrop
+  closeEls.forEach(el => el.addEventListener("click", closeModal));
+  backdrop?.addEventListener("click", closeModal);
+
+  // ESC to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+
+  // Focus trap
+  modal.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab" || !modal.classList.contains("is-open")) return;
+    const focusables = getFocusable();
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+    else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+  });
+})();
