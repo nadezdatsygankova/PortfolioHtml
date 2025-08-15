@@ -1,51 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="OU8O59Pp5JqDnMM2XamwnHhxwZ1XubM3NY8GtVOaUJU" />
-  <meta name="description"
-    content="Nadia Tsygankova - Web Developer with expertise in creating beautiful digital experiences. Explore my portfolio of modern web applications and innovative solutions.">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <meta
+    name="description"
+    content="Nadia Tsygankova - Web Developer with expertise in creating beautiful digital experiences. Explore my portfolio of modern web applications and innovative solutions."
+  />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-P9P9FNZC');</script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-P9P9FNZC");
+  </script>
   <!-- End Google Tag Manager -->
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZX4R9B3ZV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-FZX4R9B3ZV");
+  </script>
+  <!-- End GA -->
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Minimal, self-contained styles for Trainer + Modal (does not affect your site styles) -->
+  <style>
+    /* === English Trainer inline section === */
+    .trainer { padding: 80px 0; background: #f8fafc; }
+    .trainer-embed {
+      position: relative; width: 100%; min-height: 80vh;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(2,6,23,.12); background: #fff;
+    }
+    .trainer-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+    .trainer-note { margin-top: 12px; font-size: 0.95rem; color: #475569; }
+    @media (max-width: 640px) { .trainer-embed { min-height: 85vh; } }
+
+    /* === Fullscreen modal === */
+    .trainer-modal { position: fixed; inset: 0; z-index: 9999; display: none; }
+    .trainer-modal.is-open { display: block; }
+    .trainer-backdrop { position: absolute; inset: 0; background: rgba(2,6,23,.55); backdrop-filter: blur(2px); }
+    .trainer-sheet {
+      position: relative; margin: 0 auto;
+      width: min(1200px, 96vw); height: min(92vh, 1000px);
+      background: #fff; border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(2,6,23,.35); overflow: hidden; transform: translateY(4vh);
+      outline: none;
+    }
+    .trainer-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; background: #0f172a; color: #fff;
+    }
+    .trainer-title { margin: 0; font-size: 1rem; font-weight: 700; }
+    .trainer-close {
+      border: 0; background: transparent; color: #fff;
+      font-size: 1.25rem; cursor: pointer; line-height: 1;
+    }
+    .trainer-frame-wrap { position: relative; width: 100%; height: calc(100% - 48px); }
+    .trainer-frame-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+    @media (max-width: 640px) { .trainer-sheet { width: 100vw; height: 100vh; border-radius: 0; transform: none; } }
+
+    /* Helpers for body lock + mobile nav (safe if you already have your own) */
+    body.no-scroll { overflow: hidden; }
+    .nav-menu { transition: transform .25s ease; }
+    .nav-menu.open { transform: translateX(0); } /* adjust if your CSS uses display/block instead */
+    .nav-toggle.open .bar:nth-child(2) { opacity: 0; }
+    .nav-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  </style>
+
   <title>Nadia Tsygankova - Web Developer</title>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FZX4R9B3ZV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-FZX4R9B3ZV');
-</script>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9P9FNZC" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9P9FNZC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navigation -->
@@ -61,6 +115,8 @@
         <a href="#work" class="nav-link">Work</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
+        <!-- NEW: Trainer link to inline section -->
+        <a href="#trainer" class="nav-link">Trainer</a>
       </div>
       <div class="nav-toggle" id="nav-toggle">
         <span class="bar"></span>
@@ -85,6 +141,8 @@
           <div class="hero-buttons">
             <a href="#work" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            <!-- NEW: fullscreen modal launcher -->
+            <a href="#trainer-modal" class="btn btn-secondary" data-open-trainer>Open Trainer (Fullscreen)</a>
           </div>
         </div>
         <div class="hero-image">
@@ -103,7 +161,7 @@
       </div>
 
       <div class="work-grid">
-        <!-- Project 1 -->
+        <!-- Project cards (unchanged) -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/pvdream.jpg" alt="Pvdreamstoneinc" />
@@ -122,7 +180,6 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/wedding.jpg" alt="Wedding Application" />
@@ -141,13 +198,11 @@
           </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/2.jpg" alt="Virtual Piano" />
             <div class="work-overlay">
-              <a href="https://nadezdatsygankova.github.io/virtual-piano/" target="_blank" class="work-link">View
-                Live</a>
+              <a href="https://nadezdatsygankova.github.io/virtual-piano/" target="_blank" class="work-link">View Live</a>
             </div>
           </div>
           <div class="work-content">
@@ -161,7 +216,6 @@
           </div>
         </div>
 
-        <!-- Project 4 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/4.jpg" alt="Photo Filter App" />
@@ -180,7 +234,6 @@
           </div>
         </div>
 
-        <!-- Project 5 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/listApp.jpg" alt="Food List App" />
@@ -199,7 +252,6 @@
           </div>
         </div>
 
-        <!-- Project 6 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/gallery.jpg" alt="Gallery App" />
@@ -218,7 +270,6 @@
           </div>
         </div>
 
-        <!-- Project 7 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/weather-node.jpg" alt="Weather App" />
@@ -237,13 +288,11 @@
           </div>
         </div>
 
-        <!-- Project 8 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/shelter.jpg" alt="Cozy House" />
             <div class="work-overlay">
-              <a href="https://rolling-scopes-school.github.io/nadezdatsygankova-JSFE2022Q1/shelter/index.html"
-                target="_blank" class="work-link">View Live</a>
+              <a href="https://rolling-scopes-school.github.io/nadezdatsygankova-JSFE2022Q1/shelter/index.html" target="_blank" class="work-link">View Live</a>
             </div>
           </div>
           <div class="work-content">
@@ -257,7 +306,6 @@
           </div>
         </div>
 
-        <!-- Project 9 -->
         <div class="work-card">
           <div class="work-image">
             <img src="./img/works/3.jpg" alt="Wild Life" />
@@ -301,26 +349,36 @@
 
           <div class="about-card">
             <h3>Beyond Code</h3>
-            <p>When I’m not coding or analyzing data, I’m cycling scenic routes, exploring new destinations, or diving into a great book. These passions inspire my creativity and bring fresh perspectives to my work—whether it’s developing a high-performing website, mapping a marketing campaign, or conducting a deep-dive business analysis.
-            </p>
+            <p>When I’m not coding or analyzing data, I’m cycling scenic routes, exploring new destinations, or diving into a great book. These passions inspire my creativity and bring fresh perspectives to my work—whether it’s developing a high-performing website, mapping a marketing campaign, or conducting a deep-dive business analysis.</p>
           </div>
         </div>
-
-        <!-- <div class="about-gallery">
-          <div class="gallery-item">
-            <img src="./img/bicycle2.jpg" alt="Cycling" />
-            <span class="gallery-caption">Adventure</span>
-          </div>
-          <div class="gallery-item">
-            <img src="./img/travel1.jpg" alt="Travel" />
-            <span class="gallery-caption">Exploration</span>
-          </div>
-          <div class="gallery-item">
-            <img src="./img/book.jpg" alt="Reading" />
-            <span class="gallery-caption">Knowledge</span>
-          </div>
-        </div> -->
       </div>
+    </div>
+  </section>
+
+  <!-- English Trainer Section (inline) -->
+  <section id="trainer" class="trainer">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">My <span class="highlight">English Trainer</span></h2>
+        <p class="section-subtitle">
+          Practice flashcards, spelling, ear training, and speaking. Your progress is saved in your browser.
+        </p>
+      </div>
+
+      <div class="trainer-embed">
+        <iframe
+          src="https://nadezdatsygankova.github.io/my-english-trainer/"
+          title="My English Trainer"
+          loading="lazy"
+          allow="microphone; clipboard-read; clipboard-write; autoplay"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+
+      <p class="trainer-note">
+        If the app doesn’t load, <a href="https://nadezdatsygankova.github.io/my-english-trainer/" target="_blank" rel="noopener">open it in a new tab</a>.
+      </p>
     </div>
   </section>
 
@@ -360,28 +418,16 @@
         </div>
 
         <div class="contact-form">
-          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-            action="/">
-            <!-- Hidden field for Netlify -->
+          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
             <input type="hidden" name="form-name" value="contact" />
-            <!-- Honeypot field to prevent spam -->
-            <div class="hidden">
-              <input name="bot-field" />
-            </div>
+            <div class="hidden"><input name="bot-field" /></div>
 
-            <div class="form-group">
-              <input type="text" id="name" name="name" placeholder="Your Name" required />
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Your Email" required />
-            </div>
-            <div class="form-group">
-              <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-            </div>
+            <div class="form-group"><input type="text" id="name" name="name" placeholder="Your Name" required /></div>
+            <div class="form-group"><input type="email" id="email" name="email" placeholder="Your Email" required /></div>
+            <div class="form-group"><textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea></div>
             <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
           </form>
 
-          <!-- Success message (hidden by default) -->
           <div id="successMessage" class="success-message" style="display: none;">
             <div class="success-icon">✅</div>
             <h3>Message Sent Successfully!</h3>
@@ -399,20 +445,40 @@
         <p>&copy; 2025 Nadia Tsygankova. Made with ❤️ and lots of ☕</p>
         <div class="footer-social">
           <a href="mailto:tsygankovanadia@gmail.com" target="_blank" aria-label="Email">
-            <img src="./img/icons/Mail.svg" alt="Email" />
+            <img src="/img/icons/Mail.svg" alt="Email" />
           </a>
           <a href="https://www.linkedin.com/in/nadezdatsygankova/" target="_blank" aria-label="LinkedIn">
-            <img src="./img/icons/LinkedIn.svg" alt="LinkedIn" />
+            <img src="/img/icons/LinkedIn.svg" alt="LinkedIn" />
           </a>
           <a href="https://github.com/nadezdatsygankova" target="_blank" aria-label="GitHub">
-            <img src="./img/icons/github.svg" alt="GitHub" />
+            <img src="/img/icons/github.svg" alt="GitHub" />
           </a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Trainer Fullscreen Modal -->
+  <div class="trainer-modal" id="trainerModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="trainer-backdrop" data-close></div>
+    <div class="trainer-sheet" role="document" tabindex="-1">
+      <header class="trainer-header">
+        <h3 class="trainer-title">My English Trainer</h3>
+        <button class="trainer-close" aria-label="Close trainer" title="Close" data-close>✕</button>
+      </header>
+      <div class="trainer-frame-wrap">
+        <iframe
+          src="https://nadezdatsygankova.github.io/my-english-trainer/"
+          title="My English Trainer"
+          allow="microphone; clipboard-read; clipboard-write; autoplay"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JS -->
   <script src="index.js"></script>
 </body>
-
 </html>
