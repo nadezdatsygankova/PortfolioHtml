@@ -1,3 +1,69 @@
+// Logo click animation
+document.addEventListener('DOMContentLoaded', function () {
+  const logo = document.querySelector('.nav-logo img');
+
+  if (logo) {
+    logo.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // Create ripple effect
+      const ripple = document.createElement('div');
+      ripple.style.cssText = `
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(16, 185, 129, 0.3);
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+        width: 60px;
+        height: 60px;
+        left: 50%;
+        top: 50%;
+        margin-left: -30px;
+        margin-top: -30px;
+      `;
+
+      // Add ripple styles
+      const rippleStyles = `
+        @keyframes ripple {
+          to {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+      `;
+
+      if (!document.querySelector('#ripple-styles')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-styles';
+        style.textContent = rippleStyles;
+        document.head.appendChild(style);
+      }
+
+      // Position ripple relative to logo
+      const logoRect = logo.getBoundingClientRect();
+
+      ripple.style.left = (logoRect.left + logoRect.width / 2 - 30) + 'px';
+      ripple.style.top = (logoRect.top + logoRect.height / 2 - 30) + 'px';
+      ripple.style.position = 'fixed';
+      ripple.style.zIndex = '10000';
+
+      document.body.appendChild(ripple);
+
+      // Remove ripple after animation
+      setTimeout(() => {
+        if (ripple.parentNode) {
+          ripple.parentNode.removeChild(ripple);
+        }
+      }, 600);
+
+      // Simple scroll to top without any additional modifications
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+  }
+});
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function () {
   const navToggle = document.getElementById('nav-toggle');
@@ -44,17 +110,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Navbar background change on scroll
-window.addEventListener('scroll', function () {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 100) {
-    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-  } else {
-    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    navbar.style.boxShadow = 'none';
-  }
-});
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -352,14 +407,12 @@ function debounce(func, wait) {
 
 // Debounced scroll handler
 const debouncedScrollHandler = debounce(function () {
-  // Navbar background change
+  // Navbar scroll effect with class toggle
   const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 100) {
-    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
   } else {
-    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    navbar.style.boxShadow = 'none';
+    navbar.classList.remove('scrolled');
   }
 
   // Parallax effect
@@ -375,6 +428,43 @@ const debouncedScrollHandler = debounce(function () {
 }, 10);
 
 window.addEventListener('scroll', debouncedScrollHandler);
+
+// Blog iframe loading state
+document.addEventListener('DOMContentLoaded', function () {
+  const blogIframe = document.querySelector('.blog-iframe');
+  const blogContainer = document.querySelector('.blog-iframe-container');
+
+  if (blogIframe && blogContainer) {
+    blogIframe.addEventListener('load', function () {
+      blogContainer.classList.add('loaded');
+    });
+
+    // Fallback: hide loading after 5 seconds
+    setTimeout(() => {
+      blogContainer.classList.add('loaded');
+    }, 5000);
+  }
+});
+
+// Enhanced scroll animations
+const scrollObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-in');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+// Observe sections for animation
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+    scrollObserver.observe(section);
+  });
+});
 
 
 // =================== MOBILE NAV: toggle + close on link ===================
