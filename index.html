@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="OU8O59Pp5JqDnMM2XamwnHhxwZ1XubM3NY8GtVOaUJU" />
-  <meta
-    name="description"
-    content="Nadia Tsygankova - Web Developer with expertise in creating beautiful digital experiences. Explore my portfolio of modern web applications and innovative solutions."
-  />
+  <meta name="description"
+    content="Nadia Tsygankova - Web Developer & Travel Blogger with expertise in creating beautiful digital experiences and documenting adventures across Canada and the USA. Explore my portfolio and travel stories." />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -17,10 +16,8 @@
   <link rel="manifest" href="/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <!-- Google Tag Manager -->
   <script>
     (function (w, d, s, l, i) {
@@ -51,55 +48,156 @@
   <!-- Minimal, self-contained styles for Trainer + Modal (does not affect your site styles) -->
   <style>
     /* === English Trainer inline section === */
-    .trainer { padding: 80px 0; background: #f8fafc; }
-    .trainer-embed {
-      position: relative; width: 100%; min-height: 80vh;
-      border-radius: 16px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(2,6,23,.12); background: #fff;
+    .trainer {
+      padding: 80px 0;
+      background: #f8fafc;
     }
-    .trainer-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
-    .trainer-note { margin-top: 12px; font-size: 0.95rem; color: #475569; }
-    @media (max-width: 640px) { .trainer-embed { min-height: 85vh; } }
+
+    .trainer-embed {
+      position: relative;
+      width: 100%;
+      min-height: 80vh;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(2, 6, 23, .12);
+      background: #fff;
+    }
+
+    .trainer-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
+
+    .trainer-note {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #475569;
+    }
+
+    @media (max-width: 640px) {
+      .trainer-embed {
+        min-height: 85vh;
+      }
+    }
 
     /* === Fullscreen modal === */
-    .trainer-modal { position: fixed; inset: 0; z-index: 9999; display: none; }
-    .trainer-modal.is-open { display: block; }
-    .trainer-backdrop { position: absolute; inset: 0; background: rgba(2,6,23,.55); backdrop-filter: blur(2px); }
+    .trainer-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+    }
+
+    .trainer-modal.is-open {
+      display: block;
+    }
+
+    .trainer-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(2, 6, 23, .55);
+      backdrop-filter: blur(2px);
+    }
+
     .trainer-sheet {
-      position: relative; margin: 0 auto;
-      width: min(1200px, 96vw); height: min(92vh, 1000px);
-      background: #fff; border-radius: 16px;
-      box-shadow: 0 30px 80px rgba(2,6,23,.35); overflow: hidden; transform: translateY(4vh);
+      position: relative;
+      margin: 0 auto;
+      width: min(1200px, 96vw);
+      height: min(92vh, 1000px);
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(2, 6, 23, .35);
+      overflow: hidden;
+      transform: translateY(4vh);
       outline: none;
     }
+
     .trainer-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 12px 16px; background: #0f172a; color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #0f172a;
+      color: #fff;
     }
-    .trainer-title { margin: 0; font-size: 1rem; font-weight: 700; }
+
+    .trainer-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
     .trainer-close {
-      border: 0; background: transparent; color: #fff;
-      font-size: 1.25rem; cursor: pointer; line-height: 1;
+      border: 0;
+      background: transparent;
+      color: #fff;
+      font-size: 1.25rem;
+      cursor: pointer;
+      line-height: 1;
     }
-    .trainer-frame-wrap { position: relative; width: 100%; height: calc(100% - 48px); }
-    .trainer-frame-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
-    @media (max-width: 640px) { .trainer-sheet { width: 100vw; height: 100vh; border-radius: 0; transform: none; } }
+
+    .trainer-frame-wrap {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 48px);
+    }
+
+    .trainer-frame-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
+
+    @media (max-width: 640px) {
+      .trainer-sheet {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        transform: none;
+      }
+    }
 
     /* Helpers for body lock + mobile nav (safe if you already have your own) */
-    body.no-scroll { overflow: hidden; }
-    .nav-menu { transition: transform .25s ease; }
-    .nav-menu.open { transform: translateX(0); } /* adjust if your CSS uses display/block instead */
-    .nav-toggle.open .bar:nth-child(2) { opacity: 0; }
-    .nav-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    .nav-menu {
+      transition: transform .25s ease;
+    }
+
+    .nav-menu.open {
+      transform: translateX(0);
+    }
+
+    /* adjust if your CSS uses display/block instead */
+    .nav-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open .bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.open .bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
   </style>
 
-  <title>Nadia Tsygankova - Web Developer</title>
+  <title>Nadia Tsygankova - Web Developer & Travel Blogger</title>
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9P9FNZC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9P9FNZC" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navigation -->
@@ -113,6 +211,7 @@
       <div class="nav-menu" id="nav-menu">
         <a href="#home" class="nav-link">Home</a>
         <a href="#work" class="nav-link">Work</a>
+        <a href="#blog" class="nav-link">Blog</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
         <!-- NEW: Trainer link to inline section -->
@@ -134,11 +233,15 @@
           <h1 class="hero-title">
             Hi, I'm <span class="highlight">Nadia Tsygankova</span>
           </h1>
-          <p class="hero-subtitle">Web Developer • Marketing Strategist • Creative Problem Solver</p>
+          <p class="hero-subtitle">Web Developer • Marketing Strategist • Travel Blogger • Creative Problem Solver</p>
           <p class="hero-description">
-I create beautiful, functional, and user-centered digital experiences that drive real business results. With Master’s degrees in both Computer Science and Marketing — and expertise in GA4 analytics, marketing strategy, business analysis, and leveraging AI to deliver amazing results — I bring a unique blend of technical skill, creative vision, and data-driven decision-making to every project.          </p>
+            I create beautiful, functional, and user-centered digital experiences that drive real business results. With
+            Master’s degrees in both Computer Science and Marketing — and expertise in GA4 analytics, marketing
+            strategy, business analysis, and leveraging AI to deliver amazing results — I bring a unique blend of
+            technical skill, creative vision, and data-driven decision-making to every project. </p>
           <div class="hero-buttons">
             <a href="#work" class="btn btn-primary">View My Work</a>
+            <a href="#blog" class="btn btn-secondary">Read My Travel Stories</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             <!-- NEW: fullscreen modal launcher -->
             <a href="#trainer-modal" class="btn btn-secondary" data-open-trainer> My English Trainer (Fullscreen)</a>
@@ -151,178 +254,28 @@ I create beautiful, functional, and user-centered digital experiences that drive
     </div>
   </section>
 
-  <!-- Work Section -->
-  <section id="work" class="work">
+
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
-        <p class="section-subtitle">A selection of my recent work and personal projects</p>
+        <h2 class="section-title">Travel <span class="highlight">Blog</span></h2>
+        <p class="section-subtitle">Stories from my adventures across Canada and the USA</p>
+      </div>
+      <div class="blog-embed">
+        <h3 class="blog-embed-title">Explore My Travel Blog</h3>
+        <div class="blog-iframe-container">
+          <iframe src="https://blog-tsy-nadia.netlify.app/en" title="NadiaTsy Travel Blog" class="blog-iframe"
+            loading="lazy" allow="fullscreen">
+          </iframe>
+        </div>
+        <p class="blog-iframe-note">If the blog doesn't load properly, <a href="https://blog-tsy-nadia.netlify.app/en"
+            target="_blank">open it in a new tab</a>.</p>
+            <p>Ready to explore more travel stories and adventures?</p>
+            <a href="https://blog-tsy-nadia.netlify.app/en" target="_blank" class="btn btn-primary">Visit My Travel Blog</a>
       </div>
 
-      <div class="work-grid">
-        <!-- Project cards (unchanged) -->
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/pvdream.jpg" alt="Pvdreamstoneinc" />
-            <div class="work-overlay">
-              <a href="https://www.pvdreamstoneinc.com/" target="_blank" class="work-link">View Live</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Pvdreamstoneinc</h3>
-            <p class="work-description">Turnkey solutions website with modern design and seamless user experience.</p>
-            <div class="work-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/wedding.jpg" alt="Wedding Application" />
-            <div class="work-overlay">
-              <a href="https://valery-decore.netlify.app/" target="_blank" class="work-link">View Live</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Wedding Application</h3>
-            <p class="work-description">Elegant wedding planning application built from Figma design.</p>
-            <div class="work-tech">
-              <span class="tech-tag">HTML5</span>
-              <span class="tech-tag">CSS3</span>
-              <span class="tech-tag">Figma</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/2.jpg" alt="Virtual Piano" />
-            <div class="work-overlay">
-              <a href="https://nadezdatsygankova.github.io/virtual-piano/" target="_blank" class="work-link">View Live</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Virtual Piano</h3>
-            <p class="work-description">Interactive virtual piano that responds to computer keyboard input.</p>
-            <div class="work-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/4.jpg" alt="Photo Filter App" />
-            <div class="work-overlay">
-              <a href="https://nadezdatsygankova.github.io/photo-filer/" target="_blank" class="work-link">View Live</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Photo Filter App</h3>
-            <p class="work-description">Real-time photo filtering application with multiple effects.</p>
-            <div class="work-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/listApp.jpg" alt="Food List App" />
-            <div class="work-overlay">
-              <a href="https://github.com/nadezdatsygankova/ListApp" target="_blank" class="work-link">View Code</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Food List App</h3>
-            <p class="work-description">Full-stack food management application with real-time updates.</p>
-            <div class="work-tech">
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">HTML/CSS</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/gallery.jpg" alt="Gallery App" />
-            <div class="work-overlay">
-              <a href="https://github.com/nadezdatsygankova/Gallery" target="_blank" class="work-link">View Code</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Gallery Application</h3>
-            <p class="work-description">E-commerce gallery with user authentication and payment integration.</p>
-            <div class="work-tech">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express</span>
-              <span class="tech-tag">MongoDB</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/weather-node.jpg" alt="Weather App" />
-            <div class="work-overlay">
-              <a href="https://github.com/nadezdatsygankova/web-server" target="_blank" class="work-link">View Code</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Weather Application</h3>
-            <p class="work-description">Real-time weather app with API integration and responsive design.</p>
-            <div class="work-tech">
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express</span>
-              <span class="tech-tag">Handlebars</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/shelter.jpg" alt="Cozy House" />
-            <div class="work-overlay">
-              <a href="https://rolling-scopes-school.github.io/nadezdatsygankova-JSFE2022Q1/shelter/index.html" target="_blank" class="work-link">View Live</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Cozy House</h3>
-            <p class="work-description">Responsive shelter website with modern UI/UX principles.</p>
-            <div class="work-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-card">
-          <div class="work-image">
-            <img src="./img/works/3.jpg" alt="Wild Life" />
-            <div class="work-overlay">
-              <a href="https://tswildlife.netlify.app/#signIn" target="_blank" class="work-link">View Live</a>
-            </div>
-          </div>
-          <div class="work-content">
-            <h3 class="work-title">Wild Life</h3>
-            <p class="work-description">Interactive wildlife application with engaging user interface.</p>
-            <div class="work-tech">
-              <span class="tech-tag">HTML</span>
-              <span class="tech-tag">CSS</span>
-              <span class="tech-tag">JavaScript</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -338,17 +291,28 @@ I create beautiful, functional, and user-centered digital experiences that drive
         <div class="about-text">
           <div class="about-card">
             <h3>Background</h3>
-            <p>I’m a web developer with a Master’s degree in Computer Science and Physics, a Master’s degree in Marketing, and a Computer Programming diploma from Seneca College. My work blends technical expertise with strategic thinking, specializing in Google Analytics 4 (GA4), marketing strategy, and business analytics.</p>
+            <p>I’m a web developer with a Master’s degree in Computer Science and Physics, a Master’s degree in
+              Marketing, and a Computer Programming diploma from Seneca College. My work blends technical expertise with
+              strategic thinking, specializing in Google Analytics 4 (GA4), marketing strategy, and business analytics.
+            </p>
           </div>
 
           <div class="about-card">
             <h3>Approach</h3>
-            <p>I create digital experiences that are functional, engaging, and measurable. By combining data insights, AI-powered solutions, and creative problem-solving, I help businesses optimize their marketing strategies, refine user journeys, and increase ROI. Every project is guided by a balance of technical precision, innovative technology, and a deep understanding of market trends.</p>
+            <p>I create digital experiences that are functional, engaging, and measurable. By combining data insights,
+              AI-powered solutions, and creative problem-solving, I help businesses optimize their marketing strategies,
+              refine user journeys, and increase ROI. Every project is guided by a balance of technical precision,
+              innovative technology, and a deep understanding of market trends.</p>
           </div>
 
           <div class="about-card">
             <h3>Beyond Code</h3>
-            <p>When I’m not coding or analyzing data, I’m cycling scenic routes, exploring new destinations, or diving into a great book. These passions inspire my creativity and bring fresh perspectives to my work—whether it’s developing a high-performing website, mapping a marketing campaign, or conducting a deep-dive business analysis.</p>
+            <p>When I'm not coding or analyzing data, I'm cycling scenic routes, exploring new destinations, or diving
+              into a great book. I document these adventures in my <a href="https://blog-tsy-nadia.netlify.app/en"
+                target="_blank" class="about-link">travel blog</a>, sharing stories from cycling the Niagara Falls loop
+              to camping in Algonquin Park. These passions inspire my creativity and bring fresh perspectives to my
+              work—whether it's developing a high-performing website, mapping a marketing campaign, or conducting a
+              deep-dive business analysis.</p>
           </div>
         </div>
       </div>
@@ -366,20 +330,145 @@ I create beautiful, functional, and user-centered digital experiences that drive
       </div>
 
       <div class="trainer-embed">
-        <iframe
-          src="https://nadezdatsygankova.github.io/my-english-trainer/"
-          title="My English Trainer"
-          loading="lazy"
-          allow="microphone; clipboard-read; clipboard-write; autoplay"
-          referrerpolicy="no-referrer"
-        ></iframe>
+        <iframe src="https://nadezdatsygankova.github.io/my-english-trainer/" title="My English Trainer" loading="lazy"
+          allow="microphone; clipboard-read; clipboard-write; autoplay" referrerpolicy="no-referrer"></iframe>
       </div>
 
       <p class="trainer-note">
-        If the app doesn’t load, <a href="https://nadezdatsygankova.github.io/my-english-trainer/" target="_blank" rel="noopener">open it in a new tab</a>.
+        If the app doesn’t load, <a href="https://nadezdatsygankova.github.io/my-english-trainer/" target="_blank"
+          rel="noopener">open it in a new tab</a>.
+          <p>Ready to explore more about my English trainer?</p>
+            <a href="https://nadezdatsygankova.github.io/my-english-trainer/" target="_blank" class="btn btn-primary">Visit My English Trainer</a>
       </p>
     </div>
   </section>
+    <!-- Work Section -->
+    <section id="work" class="work">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+          <p class="section-subtitle">A selection of my recent work and personal projects</p>
+        </div>
+
+        <div class="work-grid">
+          <!-- Project cards (unchanged) -->
+          <div class="work-card">
+            <div class="work-image">
+              <img src="./img/works/pvdream.jpg" alt="Pvdreamstoneinc" />
+              <div class="work-overlay">
+                <a href="https://www.pvdreamstoneinc.com/" target="_blank" class="work-link">View Live</a>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Pvdreamstoneinc</h3>
+              <p class="work-description">Turnkey solutions website with modern design and seamless user experience.</p>
+              <div class="work-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img src="./img/works/wedding.jpg" alt="Wedding Application" />
+              <div class="work-overlay">
+                <a href="https://valery-decore.netlify.app/" target="_blank" class="work-link">View Live</a>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Wedding Application</h3>
+              <p class="work-description">Elegant wedding planning application built from Figma design.</p>
+              <div class="work-tech">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img src="./img/works/2.jpg" alt="Virtual Piano" />
+              <div class="work-overlay">
+                <a href="https://nadezdatsygankova.github.io/virtual-piano/" target="_blank" class="work-link">View
+                  Live</a>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Virtual Piano</h3>
+              <p class="work-description">Interactive virtual piano that responds to computer keyboard input.</p>
+              <div class="work-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img src="./img/works/4.jpg" alt="Photo Filter App" />
+              <div class="work-overlay">
+                <a href="https://nadezdatsygankova.github.io/photo-filer/" target="_blank" class="work-link">View Live</a>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Photo Filter App</h3>
+              <p class="work-description">Real-time photo filtering application with multiple effects.</p>
+              <div class="work-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-image">
+              <img src="./img/works/listApp.jpg" alt="Food List App" />
+              <div class="work-overlay">
+                <a href="https://github.com/nadezdatsygankova/ListApp" target="_blank" class="work-link">View Code</a>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Food List App</h3>
+              <p class="work-description">Full-stack food management application with real-time updates.</p>
+              <div class="work-tech">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">HTML/CSS</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="work-card">
+            <div class="work-image">
+              <img src="./img/works/weather-node.jpg" alt="Weather App" />
+              <div class="work-overlay">
+                <a href="https://github.com/nadezdatsygankova/web-server" target="_blank" class="work-link">View Code</a>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Weather Application</h3>
+              <p class="work-description">Real-time weather app with API integration and responsive design.</p>
+              <div class="work-tech">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">Handlebars</span>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section>
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
@@ -417,13 +506,16 @@ I create beautiful, functional, and user-centered digital experiences that drive
         </div>
 
         <div class="contact-form">
-          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            action="/">
             <input type="hidden" name="form-name" value="contact" />
             <div class="hidden"><input name="bot-field" /></div>
 
             <div class="form-group"><input type="text" id="name" name="name" placeholder="Your Name" required /></div>
-            <div class="form-group"><input type="email" id="email" name="email" placeholder="Your Email" required /></div>
-            <div class="form-group"><textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea></div>
+            <div class="form-group"><input type="email" id="email" name="email" placeholder="Your Email" required />
+            </div>
+            <div class="form-group"><textarea id="message" name="message" placeholder="Your Message" rows="5"
+                required></textarea></div>
             <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
           </form>
 
@@ -444,13 +536,16 @@ I create beautiful, functional, and user-centered digital experiences that drive
         <p>&copy; 2025 Nadia Tsygankova. Made with ❤️ and lots of ☕</p>
         <div class="footer-social">
           <a href="mailto:tsygankovanadia@gmail.com" target="_blank" aria-label="Email">
-            <img src="/img/icons/Mail.svg" alt="Email" />
+            <img src="./img/icons/Mail.svg" alt="Email" />
           </a>
           <a href="https://www.linkedin.com/in/nadezdatsygankova/" target="_blank" aria-label="LinkedIn">
-            <img src="/img/icons/LinkedIn.svg" alt="LinkedIn" />
+            <img src="./img/icons/LinkedIn.svg" alt="LinkedIn" />
           </a>
           <a href="https://github.com/nadezdatsygankova" target="_blank" aria-label="GitHub">
-            <img src="/img/icons/github.svg" alt="GitHub" />
+            <img src="./img/icons/github.svg" alt="GitHub" />
+          </a>
+          <a href="https://blog-tsy-nadia.netlify.app/en" target="_blank" aria-label="Travel Blog">
+            <span class="blog-icon">🌍</span>
           </a>
         </div>
       </div>
@@ -466,13 +561,9 @@ I create beautiful, functional, and user-centered digital experiences that drive
         <button class="trainer-close" aria-label="Close trainer" title="Close" data-close>✕</button>
       </header>
       <div class="trainer-frame-wrap">
-        <iframe
-          src="https://nadezdatsygankova.github.io/my-english-trainer/"
-          title="My English Trainer"
-          allow="microphone; clipboard-read; clipboard-write; autoplay"
-          loading="lazy"
-          referrerpolicy="no-referrer"
-        ></iframe>
+        <iframe src="https://nadezdatsygankova.github.io/my-english-trainer/" title="My English Trainer"
+          allow="microphone; clipboard-read; clipboard-write; autoplay" loading="lazy"
+          referrerpolicy="no-referrer"></iframe>
       </div>
     </div>
   </div>
@@ -480,4 +571,5 @@ I create beautiful, functional, and user-centered digital experiences that drive
   <!-- Main JS -->
   <script src="index.js"></script>
 </body>
+
 </html>
