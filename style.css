@@ -481,6 +481,8 @@ p {
   color: white;
   border: none;
   box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+  position: relative;
+  z-index: 11;
 }
 
 .btn-primary:hover {
@@ -1016,6 +1018,8 @@ p {
   background: white;
   border-radius: 12px;
   border: 1px solid var(--border-color);
+  position: relative;
+  z-index: 10;
 }
 
 .blog-cta-inline p {
